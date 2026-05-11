@@ -1,1 +1,308 @@
-/* Add your styles here */
+/* ===== WARM AMBER DARK THEME ===== */
+
+html {
+  /* Surface colors (Lumo) */
+  --lumo-base-color: #0f0f0f;
+  --lumo-tint-5pct: #1a1a1a;
+  --lumo-tint-10pct: #222222;
+  --lumo-tint-20pct: #2a2a2a;
+  --lumo-tint-30pct: #333333;
+  --lumo-tint-40pct: #444444;
+  --lumo-tint-50pct: #555555;
+  --lumo-shade-5pct: rgba(0, 0, 0, 0.1);
+  --lumo-shade-10pct: rgba(0, 0, 0, 0.2);
+  --lumo-shade-20pct: rgba(0, 0, 0, 0.3);
+
+  --lumo-primary-color: #f59e0b;
+  --lumo-primary-color-50pct: rgba(245, 158, 11, 0.5);
+  --lumo-primary-color-10pct: rgba(245, 158, 11, 0.1);
+  --lumo-primary-text-color: #f59e0b;
+  --lumo-primary-contrast-color: #000000;
+
+  --lumo-header-text-color: #fafafa;
+  --lumo-body-text-color: #a3a3a3;
+  --lumo-secondary-text-color: #737373;
+  --lumo-tertiary-text-color: #525252;
+  --lumo-disabled-text-color: #404040;
+
+  --lumo-error-color: #f87171;
+  --lumo-error-text-color: #f87171;
+  --lumo-success-color: #4ade80;
+  --lumo-success-text-color: #4ade80;
+
+  --lumo-border-radius-m: 10px;
+  --lumo-border-radius-l: 14px;
+
+  --lumo-space-xs: 4px;
+  --lumo-space-s: 8px;
+  --lumo-space-m: 12px;
+  --lumo-space-l: 16px;
+  --lumo-space-xl: 24px;
+
+  --lumo-font-family: Inter, system-ui, -apple-system, sans-serif;
+  --lumo-font-size-xxs: 11px;
+  --lumo-font-size-xs: 12px;
+  --lumo-font-size-s: 13px;
+  --lumo-font-size-m: 14px;
+  --lumo-font-size-l: 18px;
+  --lumo-font-size-xl: 22px;
+  --lumo-font-size-xxl: 28px;
+
+  /* App-specific custom properties */
+  --transit-accent: #f59e0b;
+  --transit-accent-hover: #d97706;
+  --transit-surface-bg: #0f0f0f;
+  --transit-surface-card: #1a1a1a;
+  --transit-surface-elevated: #222222;
+  --transit-border: #2a2a2a;
+  --transit-border-subtle: #1f1f1f;
+  --transit-text-primary: #fafafa;
+  --transit-text-secondary: #a3a3a3;
+  --transit-text-muted: #737373;
+  --transit-mode-bus: #f59e0b;
+  --transit-mode-train: #fb923c;
+  --transit-mode-metro: #fbbf24;
+  --transit-mode-ferry: #a3e635;
+
+  background-color: var(--transit-surface-bg);
+  color: var(--transit-text-primary);
+}
+
+body {
+  margin: 0;
+  background-color: var(--transit-surface-bg);
+  color: var(--transit-text-primary);
+}
+
+/* --- Layout --- */
+.browse-page {
+  width: 100%;
+  display: block;
+}
+
+.page-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- Desktop Nav Bar (visible at desktop only) --- */
+.desktop-nav {
+  display: none;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--transit-border);
+  background: var(--transit-surface-bg);
+}
+
+.desktop-nav-brand {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--transit-accent);
+  text-transform: uppercase;
+}
+
+.desktop-nav-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.desktop-nav-link {
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--transit-text-secondary);
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.desktop-nav-link.active {
+  color: var(--transit-accent);
+  border-color: var(--transit-accent);
+}
+
+/* --- Browse Page --- */
+.browse-header {
+  padding: 24px 0 0;
+}
+
+.browse-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--transit-text-primary);
+  margin: 0;
+}
+
+.browse-subtitle {
+  font-size: 13px;
+  color: var(--transit-text-muted);
+  margin: 4px 0 16px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--transit-border);
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--transit-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: inherit;
+  min-height: 44px;
+}
+
+.filter-btn:hover {
+  color: var(--transit-text-secondary);
+}
+
+.filter-btn.active {
+  color: var(--transit-accent);
+  border-bottom-color: var(--transit-accent);
+}
+
+/* --- Ticket Grid --- */
+.ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 359px) {
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    max-width: 960px;
+    padding: 0 40px;
+  }
+
+  .ticket-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .filter-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+/* --- Ticket Card --- */
+.ticket-card {
+  background: var(--transit-surface-card);
+  border-radius: 14px;
+  padding: 16px;
+  border: 1px solid var(--transit-border);
+  border-left-width: 3px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-card:hover {
+  background: var(--transit-surface-elevated);
+}
+
+.ticket-card.mode-bus { border-left-color: var(--transit-mode-bus); }
+.ticket-card.mode-train { border-left-color: var(--transit-mode-train); }
+.ticket-card.mode-metro { border-left-color: var(--transit-mode-metro); }
+.ticket-card.mode-ferry { border-left-color: var(--transit-mode-ferry); }
+
+.ticket-card-icon {
+  font-size: 18px;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.ticket-card-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--transit-text-primary);
+  margin-bottom: 8px;
+}
+
+.ticket-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.ticket-card-price {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: auto;
+}
+
+.ticket-card-price.mode-bus { color: var(--transit-mode-bus); }
+.ticket-card-price.mode-train { color: var(--transit-mode-train); }
+.ticket-card-price.mode-metro { color: var(--transit-mode-metro); }
+.ticket-card-price.mode-ferry { color: var(--transit-mode-ferry); }
+
+/* --- Badges --- */
+.badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.badge-mode {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.badge-mode.mode-bus {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--transit-mode-bus);
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.badge-mode.mode-train {
+  background: rgba(251, 146, 60, 0.15);
+  color: var(--transit-mode-train);
+  border-color: rgba(251, 146, 60, 0.25);
+}
+
+.badge-mode.mode-metro {
+  background: rgba(251, 191, 36, 0.15);
+  color: var(--transit-mode-metro);
+  border-color: rgba(251, 191, 36, 0.25);
+}
+
+.badge-mode.mode-ferry {
+  background: rgba(163, 230, 53, 0.15);
+  color: var(--transit-mode-ferry);
+  border-color: rgba(163, 230, 53, 0.25);
+}
+
+.badge-type {
+  background: var(--transit-surface-elevated);
+  color: var(--transit-text-secondary);
+  border: 1px solid var(--transit-border);
+}
