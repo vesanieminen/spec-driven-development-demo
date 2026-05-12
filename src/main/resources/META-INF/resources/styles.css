@@ -1,1 +1,239 @@
-/* Add your styles here */
+:root {
+  --surface-bg: #0f0f0f;
+  --surface-card: #1a1a1a;
+  --surface-elevated: #222222;
+
+  --border-default: #2a2a2a;
+
+  --text-primary: #fafafa;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+
+  --accent-primary: #f59e0b;
+
+  --mode-bus: #f59e0b;
+  --mode-train: #fb923c;
+  --mode-metro: #fbbf24;
+  --mode-ferry: #a3e635;
+
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-2xl: 24px;
+}
+
+html,
+body {
+  background: var(--surface-bg);
+  color: var(--text-primary);
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+.qt-app {
+  background: var(--surface-bg);
+}
+
+.qt-desktop-nav {
+  display: none;
+  align-items: center;
+  height: 56px;
+  padding: 0 40px;
+  border-bottom: 1px solid var(--border-default);
+  background: var(--surface-bg);
+}
+
+.qt-brand {
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .qt-desktop-nav {
+    display: flex;
+  }
+}
+
+.qt-page {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.qt-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+}
+
+@media (min-width: 768px) {
+  .qt-content {
+    padding: 28px 40px 48px;
+  }
+}
+
+.qt-page-header {
+  padding: 0 0 12px;
+}
+
+.qt-page-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.qt-page-subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.qt-filter-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.qt-filter-tab {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .qt-filter-tab {
+    padding: 10px 20px;
+  }
+}
+
+.qt-filter-tab.is-active {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+
+.qt-ticket-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+}
+
+@media (min-width: 480px) {
+  .qt-ticket-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .qt-ticket-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+.qt-ticket-card {
+  --mode-color: var(--accent-primary);
+  background: var(--surface-card);
+  border-radius: 14px;
+  padding: 16px;
+  border-top: 1px solid var(--border-default);
+  border-right: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+  border-left: 3px solid var(--mode-color);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.qt-ticket-card:hover {
+  background: var(--surface-elevated);
+}
+
+.qt-mode-bus {
+  --mode-color: var(--mode-bus);
+}
+
+.qt-mode-train {
+  --mode-color: var(--mode-train);
+}
+
+.qt-mode-metro {
+  --mode-color: var(--mode-metro);
+}
+
+.qt-mode-ferry {
+  --mode-color: var(--mode-ferry);
+}
+
+.qt-ticket-emoji {
+  display: block;
+  font-size: 18px;
+  margin-bottom: var(--space-sm);
+}
+
+.qt-ticket-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.qt-badge-row {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0 10px;
+}
+
+.qt-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.qt-badge--mode {
+  color: var(--mode-color);
+  background: color-mix(in srgb, var(--mode-color) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--mode-color) 25%, transparent);
+}
+
+.qt-badge--type {
+  color: var(--text-secondary);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+}
+
+.qt-ticket-price {
+  display: block;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--mode-color);
+}
+
+.qt-back-link {
+  display: inline-block;
+  margin: 4px 0 16px;
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.qt-detail-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.qt-detail-meta {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
